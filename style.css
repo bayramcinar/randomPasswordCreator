@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url(img/bg.jpg);
+    background-size: cover;
+}
+*{
+    font-family: 'Merriweather', serif;
+}
+.container{
+    border: #F8F1F1 1px solid;
+    width: 250px !important;
+    height: 100%;
+    background-color: #145168;
+    border-radius: 10px;
+}
+.lenght{
+    color: #F8F1F1;
+    font-size: 15px;
+    margin: 8px;
+    margin-left: 0;
+}
+.options{
+    color: #F8F1F1;
+    font-size: 15px;
+    margin-bottom: 8px !important;
+    margin-left: 15px;
+
+}
+#myRange{
+    width: 185px;
+    margin: 10px;
+    margin-left: 0;
+}
+.sections{
+    list-style: none;
+    margin-bottom: 0;
+}
+.section{
+    margin: 15px;
+}
+.passwordContainer{
+    font-size: 15px;
+    padding: 8px;
+    color: #fff;
+    margin-bottom: 0 !important;
+}
+
+.btn{
+    display: flex;
+    width: 90px !important;
+    text-align: center;
+    color:#fff !important;
+    background-color: #E57C23 !important;
+    border: 1px solid #F8F1F1 !important;
+}
+.createArea,
+.lenghtArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createArea{
+    margin-bottom: 15px !important;
+}
+.createButon{
+    margin: 10px !important;
+}
+.createButon:hover{
+    background-color: #F8F1F1 !important;
+    color: #E57C23 !important;
+    border: #E57C23 1px solid !important;
+    transition: 0.5s ease-in-out;
+}
+#passwordContainer{
+    border: 1px solid #F8F1F1;
+    padding: 8px;
+    width: 210px !important;
+    height: 40px;
+    background-color: #262A56;
+    margin: 10px !important;
+    border-radius: 5px;
+}
+.önyazi{
+    margin-top: 4px !important;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 0 !important;
+}
+#rangeValue{
+    margin: 10px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 5px !important;
+    color: #F8F1F1;
+}
+label{
+    color: #F8F1F1;
+}
+.headerH1{
+    color: #F8F1F1;
+    font-size: 20px;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 0;
+}
+@media only screen and (max-width: 767px) {
+    body{
+        background: url(img/mobilBg.jpg);
+        background-size: cover;
+    }
+    .container{
+        border: #F8F1F1 1px solid;
+        width: 250px !important;
+        height: 100%;
+        background-color: #145168;
+        border-radius: 10px;
+    }
+}
+
+  
+  
+  
+  
