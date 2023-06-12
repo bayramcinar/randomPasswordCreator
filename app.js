@@ -8,7 +8,7 @@ var sayi = document.getElementById("sayi");
 var karakter = document.getElementById("karakter");
 var passwordContainer = document.getElementById("passwordContainer");
 var önyazi = document.querySelector(".önyazi");
-var copyButton = document.getElementById("copyButton");
+
 
 var uppercaseLetters = [];
 var lowercaseLetters = [];
@@ -152,24 +152,6 @@ function createPassword(){
 createButton.addEventListener('click', function() {
   createPassword();
 });
-
-copyButton.addEventListener("click", function() {
-  var passwordContainer = document.getElementById("passwordContainer");
-  var textToCopy = passwordContainer.textContent;
-
-  if (textToCopy === "Select an Option !" || textToCopy === "Your Password Here") {
-      alert("Firstly Create a Password !");
-  } else {
-      navigator.clipboard.writeText(textToCopy)
-          .then(function() {
-              alert("Password Copied Successfully !");
-          })
-          .catch(function(error) {
-              console.error("An error occurred while copying the text:", error);
-          });
-  }
-});
-
 
 
 

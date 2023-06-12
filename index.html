@@ -20,9 +20,7 @@
             </div>
             <div class="row passwordArea">
                 <div class="passArea text-center">
-                    <div id="passwordContainer" class="önyazi fw-bold">
-                        Your Password Here
-                    </div>
+                    <div id="passwordContainer" class="önyazi fw-bold">Your Password Here</div>
                 </div>
             </div>
             <div class="row sectionsArea">
@@ -86,6 +84,34 @@
         </div>
     </main>
 
+    <script>
+        var copyButton = document.getElementById("copyButton");
+        function copy() {
+        var passwordContainer = document.getElementById("passwordContainer");
+        var textToCopy = passwordContainer.textContent;
+        var copyToText = passwordContainer.textContent;
+
+        if ((textToCopy === "Your Password Here") || (textToCopy === "Select an Option !")) {
+            alert("Firstly Create a Password !");
+        } else {
+            var textarea = document.createElement("textarea");
+            textarea.value = copyToText;
+            textarea.style.position = "fixed"; 
+            textarea.style.left = "-9999px";
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("Password Copied Successfully !");
+        }
+        };
+
+        copyButton.addEventListener('click', function() {
+        copy();
+        });
+
+
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
