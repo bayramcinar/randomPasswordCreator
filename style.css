@@ -67,6 +67,15 @@ body{
 .createArea{
     margin-bottom: 15px !important;
 }
+.copyButon{
+    background-color: #D25380 !important;
+}
+.copyButon:hover{
+    background-color: #F8F1F1 !important;
+    color: #D25380 !important;
+    border: #D25380 1px solid !important;
+    transition: 0.5s ease-in-out;
+}
 .createButon{
     margin: 10px !important;
 }
@@ -80,12 +89,13 @@ body{
     border: 1px solid #F8F1F1;
     padding: 8px;
     width: 210px !important;
-    height: 40px;
+    height: auto;
     background-color: #262A56;
     margin: 10px !important;
     border-radius: 5px;
 }
-.önyazi{
+.önyazi,
+.error{
     margin-top: 4px !important;
     color: #fff;
     font-size: 15px;

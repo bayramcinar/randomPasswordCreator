@@ -8,6 +8,7 @@ var sayi = document.getElementById("sayi");
 var karakter = document.getElementById("karakter");
 var passwordContainer = document.getElementById("passwordContainer");
 var önyazi = document.querySelector(".önyazi");
+var copyButton = document.getElementById("copyButton");
 
 var uppercaseLetters = [];
 var lowercaseLetters = [];
@@ -47,24 +48,31 @@ buyukHarf.addEventListener('change', function() {
         secenekler.push(x);
     }
   }
-  else{
-    for(let x of uppercaseLetters){
-        secenekler.pop(x);
+  else {
+    for (let z of uppercaseLetters) {
+      const index = secenekler.indexOf(z);
+      if (index !== -1) {
+        secenekler.splice(index, 1);
+      }
     }
   }
+  console.log(secenekler);
 });
 
 kucukHarf.addEventListener('change', function() {
   if (this.checked) {
-    for(let x of lowercaseLetters){
-        secenekler.push(x);
+    for (let x of lowercaseLetters) {
+      secenekler.push(x);
+    }
+  } else {
+    for (let z of lowercaseLetters) {
+      const index = secenekler.indexOf(z);
+      if (index !== -1) {
+        secenekler.splice(index, 1);
+      }
     }
   }
-  else{
-    for(let x of lowercaseLetters){
-        secenekler.pop(x);
-    }
-  }
+  console.log(secenekler);
 });
 
 sayi.addEventListener('change', function() {
@@ -73,11 +81,15 @@ sayi.addEventListener('change', function() {
         secenekler.push(x);
     }
   }
-  else{
-    for(let x of numbers){
-        secenekler.pop(x);
+  else {
+    for (let z of numbers) {
+      const index = secenekler.indexOf(z);
+      if (index !== -1) {
+        secenekler.splice(index, 1);
+      }
     }
   }
+  console.log(secenekler);
 });
 
 karakter.addEventListener('change', function() {
@@ -86,18 +98,25 @@ karakter.addEventListener('change', function() {
         secenekler.push(x);
     }
   }
-  else{
-    for(let x of numbersAndLettersRemoved){
-        secenekler.pop(x);
+  else {
+    for (let z of numbersAndLettersRemoved) {
+      const index = secenekler.indexOf(z);
+      if (index !== -1) {
+        secenekler.splice(index, 1);
+      }
     }
   }
+  console.log(secenekler);
 });
 
 
-createButton.addEventListener("click", function(){
-    if(!buyukHarf.checked && !kucukHarf.checked && !sayi.checked && !karakter.checked){
-        önyazi.innerHTML = "Select a Section !";
-    }
+function createPassword(){
+    
+      if ((!buyukHarf.checked && !kucukHarf.checked && !sayi.checked && !karakter.checked)) {
+        passwordContainer.innerHTML = "Select an Option !";
+        passwordContainer.style.color="#fff";
+        passwordContainer.style.fontSize="15px";
+      }
     else{
         var passwordArray = [];
         var genislik = parseInt(rangeValue.textContent);
@@ -123,13 +142,33 @@ createButton.addEventListener("click", function(){
             span.style.paddingBottom = "10px";
             span.style.paddingTop = "10px";
             span.style.fontWeight = "600";  
-            span.classList ="fw-bold";
+            span.classList = "fw-bold";
             span.style.letterSpacing="0.5px";
             passwordContainer.appendChild(span);
         }    
     }
+}
+
+createButton.addEventListener('click', function() {
+  createPassword();
 });
 
+copyButton.addEventListener("click", function() {
+  var passwordContainer = document.getElementById("passwordContainer");
+  var textToCopy = passwordContainer.textContent;
+
+  if (textToCopy === "Select an Option !" || textToCopy === "Your Password Here") {
+      alert("Firstly Create a Password !");
+  } else {
+      navigator.clipboard.writeText(textToCopy)
+          .then(function() {
+              alert("Password Copied Successfully !");
+          })
+          .catch(function(error) {
+              console.error("An error occurred while copying the text:", error);
+          });
+  }
+});
 
 
 
